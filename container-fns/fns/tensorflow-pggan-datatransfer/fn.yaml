@@ -1,0 +1,21 @@
+id: tensorflow-pggan-datatransfer
+name: Transfer data into tfrecord
+docker-image: pggan
+
+args:
+  - id: dataset-path
+    help: 'path to dataset in tfrecord format'
+  - id: output-path
+    help: 'path to store training results'
+
+docker-volumes:
+  - host-path: "{output-path}"
+    container-path: /mnt/fcav/3D-lighting/dataset_tfrecords
+    read-only: False
+  - host-path: "{dataset-path}"
+    container-path: /mnt/fcav/3D-lighting/dataset
+
+logfile-path: "{output-path}/e2e-datatransfer-logs.txt"
+
+command: |
+  python3 dataset_tool.py create_from_images /mnt/fcav/3D-lighting/dataset_tfrecords /mnt/fcav/3D-lighting/dataset --shuffle
