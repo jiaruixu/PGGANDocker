@@ -18,7 +18,4 @@ docker-volumes:
 logfile-path: "{output-path}/e2e-datatransfer-logs.txt"
 
 command: |
-  python3 dataset_tool.py \
-          create_from_images \
-          /mnt/fcav/3D-lighting/dataset_tfrecords \
-          /mnt/fcav/3D-lighting/dataset 
+  python3 dataset_tool.py  create_from_images  /mnt/fcav/3D-lighting/dataset_tfrecords /mnt/fcav/3D-lighting/dataset 
