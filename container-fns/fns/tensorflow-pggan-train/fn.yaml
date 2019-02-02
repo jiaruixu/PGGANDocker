@@ -13,7 +13,7 @@ args:
 
 docker-volumes:
   - host-path: "{output-path}"
-    container-path: /root/progressive_growing_of_gans/results
+    container-path: /mnt/fcav/3D-lighting/results
     read-only: False
   - host-path: "{dataset-path}"
     container-path: /mnt/fcav/3D-lighting
