@@ -1,0 +1,26 @@
+id: tensorflow-pggan-train
+name: Tensorflow PGGAN training end2end
+docker-image: pggan
+
+args:
+  - id: dataset-path
+   default: /mnt/fcav/3D-lighting
+   help: 'path to dataset in tfrecord format'
+  -id: output-path
+   help: 'path to store training results'
+  -id: config
+   help: 'config.py file to set up training parameters'
+
+docker-volumes:
+  - host-path: "{output-path}"
+    container-path: /root/progressive_growing_of_gans/results
+    read-only: False
+  - host-path: "{dataset-path}"
+    container-path: /mnt/fcav/3D-lighting
+  - host-path: "{config}"
+    container-path: /root/progressive_growing_of_gans/config.py
+
+logfile-path: "{output-path}/e2e-training-logs.txt"
+
+command: |
+  python3 train.py
