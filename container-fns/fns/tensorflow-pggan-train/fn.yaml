@@ -16,7 +16,7 @@ docker-volumes:
     container-path: /mnt/fcav/3D-lighting/results
     read-only: False
   - host-path: "{dataset-path}"
-    container-path: /mnt/fcav/3D-lighting
+    container-path: /mnt/fcav/3D-lighting/dataset
   - host-path: "{config}"
     container-path: /root/progressive_growing_of_gans/config.py
 
