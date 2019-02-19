@@ -27,7 +27,16 @@ Training data
 
 ```
 $ container-fn tensorflow-pggan-train \
-  --dataset-path /mnt/fcav/3D-lighting \
+  --dataset-path /mnt/fcav/3D-lighting/dataset \
+  --output-path /mnt/fcav/3D-lighting/results \
+  --config /mnt/fcav/3D-lighting/config/config_original.py
+```
+
+02/19/2019 update: modified network to illumination model
+
+```
+$ container-fn tensorflow-pggan-train \
+  --dataset-path /mnt/fcav/3D-lighting/dataset \
   --output-path /mnt/fcav/3D-lighting/results \
   --config /mnt/fcav/3D-lighting/config/config.py
 ```
