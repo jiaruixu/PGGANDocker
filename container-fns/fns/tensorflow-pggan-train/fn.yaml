@@ -20,7 +20,7 @@ docker-volumes:
   - host-path: "{config}"
     container-path: /root/progressive_growing_of_gans/config.py
 
-logfile-path: "{output-path}/e2e-training-logs.txt"
+# logfile-path: "{output-path}/e2e-training-logs.txt"
 
 command: |
   python3 train.py

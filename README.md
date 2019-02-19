@@ -38,5 +38,5 @@ $ container-fn tensorflow-pggan-train \
 $ container-fn tensorflow-pggan-train \
   --dataset-path /mnt/fcav/3D-lighting/dataset \
   --output-path /mnt/fcav/3D-lighting/results \
-  --config /mnt/fcav/3D-lighting/config/config.py
+  --config /mnt/fcav/3D-lighting/config/config_lr.py
 ```
